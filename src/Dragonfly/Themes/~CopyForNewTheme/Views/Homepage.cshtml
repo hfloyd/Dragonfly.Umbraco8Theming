@@ -1,0 +1,15 @@
+﻿@using Umbraco.Web
+@using Umbraco.Web.Mvc
+@using Umbraco.Core.Models.PublishedContent
+
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    Layout = "MasterBody.cshtml";
+
+    var thisTheme = Model.Value<string>("SiteTheme", fallback: Fallback.ToAncestors);
+}
+@section HeadScripts { }
+@section FooterScripts { }
+
+
+@*//Page Content Here...*@

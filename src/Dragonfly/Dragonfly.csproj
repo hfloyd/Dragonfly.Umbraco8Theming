@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <Authors>Heather Floyd</Authors>
+    <Company></Company>
+    <Product>Dragonfly</Product>
+    <Description>A Theming system for Umbraco (min Umbraco version 8)</Description>
+    <PackageLicenseUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</RepositoryUrl>
+    <PackageId>Dragonfly.Umbraco8Theming</PackageId>
+    <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
+    <PackageTags>Umbraco, Theming</PackageTags>
+    <Version>0.0.1</Version>
+    <PackageReleaseNotes>Code ported from v7</PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="UmbracoCms.Core" Version="8.0.2" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views/**/*.*">
+      <Pack>true</Pack>
+      <BuildAction>Content</BuildAction>
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutput>true</CopyToOutput>
+    </Content>
+    <Content Include="Themes/**/*.*">
+      <Pack>true</Pack>
+      <BuildAction>Content</BuildAction>
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutput>true</CopyToOutput>
+    </Content>
+    <Content Include="App_Plugins/**/*.*">
+      <Pack>true</Pack>
+      <BuildAction>Content</BuildAction>
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutput>true</CopyToOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\~CopyForNewTheme\Assets\" />
+  </ItemGroup>
+  <Import Project="..\Custom.targets" />
+</Project>

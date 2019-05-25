@@ -1,0 +1,26 @@
+﻿@using System.Web.Mvc
+@using Umbraco.Web
+@using Umbraco.Web.Mvc
+@using Umbraco.Core.Models.PublishedContent
+@using Dragonfly.Umbraco8Theming
+
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@*
+    Expected Parameters:
+    -------------------
+    Title (string)
+
+    Example Usage:
+    --------------
+    @Umbraco.RenderMacro("BlogPosts_Latest", new {
+            Title="Social Media"
+            })
+*@
+
+@{
+    var thisModel = Umbraco.AssignedContentItem;
+    var thisTheme = thisModel.Value<string>("SiteTheme", fallback: Fallback.ToAncestors);
+}
+}
+
+@Html.ThemedPartial(thisTheme, "Macro_BlogPosts_Latest", thisModel, new ViewDataDictionary { { "MacroParams", Model.MacroParameters } })

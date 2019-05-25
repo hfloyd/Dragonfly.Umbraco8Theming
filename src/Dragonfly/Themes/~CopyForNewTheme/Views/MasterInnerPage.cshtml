@@ -1,0 +1,20 @@
+﻿@using Umbraco.Web
+@using Umbraco.Web.Mvc
+@using Umbraco.Core.Models.PublishedContent
+
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    Layout = "MasterBody.cshtml";
+}
+
+@section HeadScripts
+    {
+    @RenderSection("HeadScripts", required: false)
+}
+
+@section FooterScripts
+    {
+    @RenderSection("FooterScripts", required: false)
+}
+
+@RenderBody()
