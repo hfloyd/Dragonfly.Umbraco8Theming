@@ -1,12 +1,13 @@
 ﻿@using Umbraco.Web
 @using Umbraco.Web.Mvc
 @using Umbraco.Core.Models.PublishedContent
+@using Dragonfly.Umbraco8Theming
 
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-    Layout = "MasterBody.cshtml";
+    Layout = "Master.cshtml";
 
-    var thisTheme = Model.Value<string>("SiteTheme", fallback: Fallback.ToAncestors);
+    var thisTheme = Model.Value<string>("Theme", fallback: Fallback.ToAncestors);
 }
 @section HeadScripts { }
 @section FooterScripts { }
