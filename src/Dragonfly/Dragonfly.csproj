@@ -9,14 +9,15 @@
     <Company></Company>
     <Product>Dragonfly</Product>
     <Description>A Theming system for Umbraco (min Umbraco version 8)</Description>
-    <PackageLicenseUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</RepositoryUrl>
     <PackageId>Dragonfly.Umbraco8Theming</PackageId>
     <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
     <PackageTags>Umbraco, Theming</PackageTags>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <PackageReleaseNotes>Code ported from v7</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="UmbracoCms.Core" Version="8.0.2" />
@@ -50,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Themes\~CopyForNewTheme\Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <Import Project="..\Custom.targets" />
 </Project>
