@@ -19,3 +19,38 @@ Credit goes to [Shannon Deminick's *Articulate* package](https://github.com/Shaz
 
 ## Resources ##
 GitHub Repository: [https://github.com/hfloyd/Dragonfly.Umbraco8Theming](https://github.com/hfloyd/Dragonfly.Umbraco8Theming)
+
+## Setup ##
+On your root Document Type, use the included "Theme Picker" Property Type to add a "Theme" property. 
+
+The Controller which runs for each page request needs to determine the Themed View file to render the page with, so if you already have custom controllers operating in your site, be sure to include something that will route the theme correctly. For example:
+
+`using System.Web.Mvc;
+using Umbraco.Web;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace Dragonfly.Umbraco8Theming
+{
+    /// <summary>
+    /// Find the theme setting and retrieve the appropriate view
+    /// </summary>
+    public class DefaultThemeController : RenderMvcController
+    {
+        // GET: Default
+        public ActionResult Index(ContentModel model)
+        {
+            var currentTemplateName = model.Content.GetTemplateAlias();
+            var siteTheme = model.Content.AncestorOrSelf(1).Value<string>("Theme");
+            var templatePath = ThemeHelper.GetFinalThemePath(siteTheme, ThemeHelper.PathType.View, currentTemplateName);
+
+            return View(templatePath, model);
+        }
+    }
+}`
+
+If you are not using any custom controllers, you can enable the 'DefaultThemeController' via the addition of two Web.config entries:
+
+` <add key="Dragonfly.EnableDefaultThemeController" value="true" />
+  <add key="Dragonfly.ThemePropertyAlias" value="Theme" />
+  `
