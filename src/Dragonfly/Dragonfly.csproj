@@ -15,8 +15,8 @@
     <PackageId>Dragonfly.Umbraco8Theming</PackageId>
     <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
     <PackageTags>Umbraco, Theming</PackageTags>
-    <Version>0.1.0</Version>
-    <PackageReleaseNotes>Code ported from v7</PackageReleaseNotes>
+    <Version>0.2.0</Version>
+    <PackageReleaseNotes>Added Theme.config</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
@@ -59,4 +59,7 @@
     </None>
   </ItemGroup>
   <Import Project="..\Custom.targets" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(ProjectName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\bin\&quot;" />
+  </Target>
 </Project>

@@ -20,6 +20,13 @@
             GridEditor
         };
 
+        public static ThemeConfig GetThemeConfig(string ThemeName)
+        {
+            var config = ThemeConfig.Get(ThemeName);
+
+            return config;
+        }
+
         /// <summary>
         /// Returns the final path to the requested type, based on the theme and file existence.
         /// </summary>
@@ -107,8 +114,7 @@
             var path = GetFinalThemePath(SiteThemeName, PathType.View, ViewName);
             return path;
         }
-
-
+        
         /// <summary>
         /// Shortcut for 'GetFinalThemePath()' with PathType.PartialView
         /// </summary>
@@ -199,8 +205,7 @@
             {
                 var msgTemplate = "Error rendering partial view '{PartialName}'";
                 Current.Logger.Error<IHtmlString>(ex, msgTemplate, PartialName);
-                var msg = string.Format(msgTemplate, PartialName);
-                return new HtmlString(string.Format("<span class=\"error\">{0}</span>", msg));
+                return new HtmlString($"<span class=\"error\">Error rendering partial view '{PartialName}' - {ex.Message}</span>");
             }
         }
 
@@ -227,9 +232,7 @@
             {
                 var msgTemplate = "Error rendering partial view '{PartialName}'";
                 Current.Logger.Error<IHtmlString>(ex, msgTemplate, PartialName);
-
-                var msg = string.Format(msgTemplate, PartialName);
-                return new HtmlString(string.Format("<span class=\"error\">{0}</span>", msg));
+                return new HtmlString($"<span class=\"error\">Error rendering partial view '{PartialName}' - {ex.Message}</span>");
             }
 
         }
