@@ -54,3 +54,21 @@ If you are not using any custom controllers, you can enable the 'DefaultThemeCon
 	<add key="Dragonfly.EnableDefaultThemeController" value="true" />
   	<add key="Dragonfly.ThemePropertyAlias" value="Theme" />
 
+## Theme Configuration ##
+
+*New in Version 0.2*
+
+You can now store information about the Theme via an XML 'Theme.config' file. See the [example config](https://github.com/hfloyd/Dragonfly.Umbraco8Theming/blob/master/src/Dragonfly/Themes/%7ECopyForNewTheme/Theme.config) for format.
+
+If the file doesn't exist in a Theme, a default one will be created.
+
+This is most useful to store information about the GridRenderer used for the Theme - in the event that different Themes use different rendering files.
+
+example for a View:
+    
+    var thisTheme = Model.Theme;
+    var themeConfiguration = ThemeHelper.GetThemeConfig(thisTheme);
+    
+    @Html.GetTypedGridHtml(Model.GridProperty, themeConfiguration.GridRenderer)
+
+This allows you to store the basic renderers all together outside of the Themes for reuse across Themes.
