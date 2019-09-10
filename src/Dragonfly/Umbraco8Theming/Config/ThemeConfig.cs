@@ -89,8 +89,6 @@
             }
         }
 
-
-
         private static string GetConfigFilePath(string SiteThemeName)
         {
             var themeRoot = ThemeHelper.GetThemePath(SiteThemeName);
@@ -104,7 +102,8 @@
             AuthorUrl = "https://unknown",
             SourceUrl = "https://unknown",
             CssFramework = "Unspecified Framework",
-            GridRenderer = "Bootstrap3"
+            GridRenderer = "Bootstrap3",
+            Description = "Theme description..."
         };
     }
 

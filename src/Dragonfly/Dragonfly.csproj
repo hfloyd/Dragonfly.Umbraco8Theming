@@ -15,7 +15,7 @@
     <PackageId>Dragonfly.Umbraco8Theming</PackageId>
     <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
     <PackageTags>Umbraco, Theming</PackageTags>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <PackageReleaseNotes>Added Theme.config</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
