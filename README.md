@@ -37,6 +37,13 @@ The Controller which runs for each page request needs to determine the Themed Vi
 	    /// </summary>
 	    public class DefaultThemeController : RenderMvcController
 	    {
+			private readonly ILogger _logger;
+
+			public DefaultThemeController(ILogger logger)
+			{
+				_logger = logger;
+			}
+
 	        // GET: Default
 	        public ActionResult Index(ContentModel model)
 	        {

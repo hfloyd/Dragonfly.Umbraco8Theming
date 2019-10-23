@@ -15,8 +15,8 @@
     <PackageId>Dragonfly.Umbraco8Theming</PackageId>
     <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
     <PackageTags>Umbraco, Theming</PackageTags>
-    <Version>0.2.1</Version>
-    <PackageReleaseNotes>Added Theme.config</PackageReleaseNotes>
+    <Version>0.3.0</Version>
+    <PackageReleaseNotes>Updated DefaultController with injected logger</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
