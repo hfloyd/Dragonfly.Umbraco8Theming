@@ -8,6 +8,7 @@
     Layout = null;
 
     var thisTheme = Model.Value<string>("Theme", fallback: Fallback.ToAncestors);
+    var templateFilePath = ThemeHelper.GetThemeViewPath(thisTheme, Model.Page.GetTemplateAlias());
 }
 <!DOCTYPE html>
 <html>
@@ -30,12 +31,25 @@
     <link rel="stylesheet" href="@Url.ThemedAsset(thisTheme, "css/custom.css")" />
 
     <!-- Site-wide HEAD Js -->
+	<script src="@Url.ThemedAsset(thisTheme, "js/myscript.js")"></script>
     @RenderSection("HeadScripts", required: false)
 
     @{Html.RenderPartial("~/Views/Partials/GenericPartial.cshtml");}
 </head>
 
 <body class="BodyCss">
+    @if (templateFilePath.StartsWith("~/Views"))
+    {
+        var themeFolder = ThemeHelper.GetThemePath(thisTheme) + "Views/";
+        var templateName = templateFilePath.Replace("~/Views/", "");
+        <!--Customize by creating a Template file named '@templateName' at '@themeFolder'-->
+    }
+    else
+    {
+        <!--Customize this Template at '@templateFilePath'-->
+    }
+
+
     @{ Html.RenderPartial("~/Views/Partials/GenericPartial.cshtml"); }
 
     <div class="page">
@@ -59,8 +73,8 @@
             </div>
         </footer>
     </div>
-	
-	    <!-- Page footer Js -->
+
+    <!-- Page footer Js -->
     @RenderSection("FooterScripts", required: false)
 </body>
 </html>

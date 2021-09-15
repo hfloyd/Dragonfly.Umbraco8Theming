@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright ©  2021 Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <Authors>Heather Floyd</Authors>
+    <Company></Company>
+    <Product>Dragonfly.Umbraco8Theming</Product>
+    <Description>A Theming system for Umbraco (min Umbraco version 8) [.DLL ONLY (for class projects)]</Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</RepositoryUrl>
+    <PackageId>Dragonfly.Umbraco8Theming.Core</PackageId>
+    <AssemblyName>Dragonfly.Umbraco8Theming.Core</AssemblyName>
+    <PackageTags>Umbraco, Theming</PackageTags>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>Fixes to ThemeHelpers</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RootNamespace>Dragonfly.Umbraco8Theming</RootNamespace>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Heather\NAS Folders\Active Projects\Webs\~Code Projects\Dragonfly\Dragonfly.Umbraco8Theming\src\Dragonfly\Dragonfly.Umbraco8Theming.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Heather\NAS Folders\Active Projects\Webs\~Code Projects\Dragonfly\Dragonfly.Umbraco8Theming\src\Dragonfly\Dragonfly.Umbraco8Theming.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="UmbracoCms.Core" Version="8.13.0" PrivateAssets="All" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.13.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+<ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+   <Import Project="..\Custom.targets" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(ProjectName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\Clients\GHXL\sourcecode\Ghx.Web\bin\&quot;" />
+  </Target>
+</Project>

@@ -3,11 +3,11 @@
     <TargetFramework>net472</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <Copyright>Copyright ©  2021 Heather Floyd [www.HeatherFloyd.com]</Copyright>
     <RepositoryType>GIT</RepositoryType>
     <Authors>Heather Floyd</Authors>
     <Company></Company>
-    <Product>Dragonfly</Product>
+    <Product>Dragonfly.Umbraco8Theming</Product>
     <Description>A Theming system for Umbraco (min Umbraco version 8)</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.Umbraco8Theming</PackageProjectUrl>
@@ -15,20 +15,19 @@
     <PackageId>Dragonfly.Umbraco8Theming</PackageId>
     <AssemblyName>Dragonfly.Umbraco8Theming</AssemblyName>
     <PackageTags>Umbraco, Theming</PackageTags>
-    <Version>0.3.0</Version>
-    <PackageReleaseNotes>Updated DefaultController with injected logger</PackageReleaseNotes>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>Fixes to ThemeHelpers</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RootNamespace>Dragonfly.Umbraco8Theming</RootNamespace>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="UmbracoCms.Core" Version="8.0.2" />
-    <PackageReference Include="UmbracoCms.Web" Version="8.0.2" />
+    <PackageReference Include="Dragonfly.Umbraco8Theming.Core" Version="1.2.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-  </ItemGroup>
+ 
   <ItemGroup>
     <Content Include="Views/**/*.*">
       <Pack>true</Pack>
@@ -50,16 +49,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Themes\~CopyForNewTheme\Assets\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\LICENSE.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
   <Import Project="..\Custom.targets" />
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(ProjectName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\bin\&quot;" />
-  </Target>
 </Project>

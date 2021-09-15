@@ -8,6 +8,8 @@
     Layout = "Master.cshtml";
 
     var thisTheme = Model.Value<string>("Theme", fallback: Fallback.ToAncestors);
+    //var masterViewPath = ThemeHelper.GetThemeViewPath(thisTheme, "_Page");
+    //Layout = masterViewPath;
 }
 @section HeadScripts { }
 @section FooterScripts { }

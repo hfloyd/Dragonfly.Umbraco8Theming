@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dragonfly.Umbraco8Theming.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Dragonfly.Umbraco8Theming.ThemeConfig">
+            <summary>
+            Configuration settings read from a config XML file
+            </summary>
+        </member>
+        <member name="F:Dragonfly.Umbraco8Theming.ThemeConfig._config">
+            <summary>
+            Cached instance of configuration
+            </summary>
+        </member>
+        <member name="T:Dragonfly.Umbraco8Theming.DefaultThemeController">
+            <summary>
+            Find the theme setting and retrieve the appropriate view
+            </summary>
+        </member>
+        <member name="T:Dragonfly.Umbraco8Theming.ThemeBootstrapper">
+            <summary>
+            Set the default RenderMVCcontroller to be the Theme Controller. This will allow us to set the theme templates
+            </summary>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetSiteThemeName(Umbraco.Core.Models.PublishedContent.IPublishedContent)">
+            <summary>
+            Looks for the Theme property specified ont he Site root node (Ancestor at Level 1)
+            </summary>
+            <param name="CurrentPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.HasUmbracoFormsThemeFile(System.String,System.String)">
+            <summary>
+            Determine if the Theme has a themed Umbraco Forms file
+            </summary>
+            <param name="SiteThemeName">Theme name</param>
+            <param name="ViewPath">Final part of view path - ex: 'Form.cshtml' or 'Fieldtypes/FieldType.Text.cshtml'</param>
+            <returns>True if file found</returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetFinalThemePath(System.String,Dragonfly.Umbraco8Theming.ThemeHelper.PathType,System.String,System.String)">
+            <summary>
+            Returns the final path to the requested type, based on the theme and file existence.
+            </summary>
+            <param name="SiteThemeName">Theme Name</param>
+            <param name="PathType">Type of Path to return</param>
+            <param name="FileName">Name of the View (without extension) or name of the config (with extension) (optional)</param>
+            <param name="AlternateStandardPath">If the non-themed path is not standard, provide the full path here (optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetThemePath(System.String)">
+            <summary>
+            Shortcut for 'GetFinalThemePath()' with PathType.ThemeRoot
+            </summary>
+            <param name="SiteThemeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetThemeViewPath(System.String,System.String)">
+            <summary>
+            Shortcut for 'GetFinalThemePath()' with PathType.View
+            </summary>
+            <param name="SiteThemeName"></param>
+            <param name="viewName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetThemedConfigFilePath(System.String,System.String)">
+            <summary>
+            Shortcut for 'GetFinalThemePath()' with PathType.Configs
+            </summary>
+            <param name="SiteThemeName"></param>
+            <param name="ConfigFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.GetThemePartialViewPath(System.String,System.String)">
+            <summary>
+            Shortcut for 'GetFinalThemePath()' with PathType.PartialView
+            </summary>
+            <param name="SiteThemeName"></param>
+            <param name="ViewName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.ThemedAsset(System.Web.Mvc.UrlHelper,System.String,System.String)">
+            <summary>
+            Returns the url of a themed asset
+            <example>In a View:
+            <code>@Url.ThemedAsset(Model, "images/favicon.ico")</code>
+            <em>NOTE: requires '@using ClientDependency.Core.Mvc'</em>
+            </example>
+            </summary>
+            <param name="Url">UrlHelper (@Url.)</param>
+            <param name="SiteThemeName"></param>
+            <param name="RelativeAssetPath">Path to file inside [theme]/Assets/ folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.ThemedPartial(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Web.Mvc.ViewDataDictionary)">
+            <summary>
+            Renders a partial view in the current theme
+            </summary>
+            <param name="html"></param>
+            <param name="SiteThemeName"></param>
+            <param name="PartialName"></param>
+            <param name="ViewModel"></param>
+            <param name="ViewData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dragonfly.Umbraco8Theming.ThemeHelper.ThemedPartial(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.ViewDataDictionary)">
+            <summary>
+            Renders a partial view in the current theme
+            </summary>
+            <param name="html"></param>
+            <param name="SiteThemeName"></param>
+            <param name="PartialName"></param>
+            <param name="ViewData"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

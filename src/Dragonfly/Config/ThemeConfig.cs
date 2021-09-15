@@ -43,7 +43,7 @@
             string path = GetConfigFilePath(SiteThemeName);
             var lastModified = System.IO.File.GetLastWriteTime(path);
 
-            if (_config == null|| lastModified > _config.ConfigTimestamp)
+            if (_config == null|| _config.ThemeName!=SiteThemeName ||(_config.ThemeName==SiteThemeName && lastModified > _config.ConfigTimestamp))
             {
                 // If the file is not there => Create with defaults
                 CreateIfNotExists(SiteThemeName);
