@@ -1,6 +1,19 @@
 # Dragonfly.Umbraco8Theming #
 
-A Theming system for Umbraco version 8 created by [Heather Floyd](https://www.HeatherFloyd.com).
+A Theming system for Umbraco created by [Heather Floyd](https://www.HeatherFloyd.com).
+
+## Versions
+
+Install the correct package for your Umbraco installation.
+
+| Umbraco Version | Package                                                                 |
+| --------------- | -------------------------------------------------------------------------------- |
+| v 10 +           | see: [Dragonfly.Umbraco10.Theming](https://github.com/hfloyd/Dragonfly.Umbraco10.Theming) |
+| v 9             | unsupported                                                                 |
+| v 8             | **This package**  |
+| v 7             | see: [Dragonfly.UmbracoTheming](https://github.com/hfloyd/Dragonfly.UmbracoTheming)  |
+
+## Background
 
 For a general explanation of the concept, see the article below. **Note that this article was published before the code was further developed and put into GitHub. Also, the article is based on Umbraco 7, thus should really just be used for a general understanding - this package includes the code otherwise provided by the ZIP file mentioned in the article.**
 
