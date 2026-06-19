@@ -29,8 +29,8 @@
     <DocumentationFile>C:\Users\Heather\NAS Folders\Active Projects\Webs\~Code Projects\Dragonfly\Dragonfly.Umbraco8Theming\src\Dragonfly\Dragonfly.Umbraco8Theming.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="UmbracoCms.Core" Version="8.13.0" PrivateAssets="All" />
-    <PackageReference Include="UmbracoCms.Web" Version="8.13.0" PrivateAssets="All" />
+    <PackageReference Include="UmbracoCms.Core" Version="8.18.14" PrivateAssets="All" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.18.14" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
